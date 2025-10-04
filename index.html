@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Zainur Roziqin — Software Engineer</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eef8ff',
+              100: '#d8eeff',
+              200: '#b9dfff',
+              300: '#8ecbff',
+              400: '#59b0ff',
+              500: '#2d94ff',
+              600: '#1877e5',
+              700: '#135fba',
+              800: '#144f96',
+              900: '#153f75'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* smooth fade for dark mode */
+    .transition-theme {
+      transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+    }
+
+    .prose-custom p {
+      margin-bottom: .75rem;
+    }
+  </style>
+</head>
+
+<body class="transition-theme bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+  <!-- ===== Header / Navbar ===== -->
+  <header
+    class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="h-16 flex items-center justify-between">
+        <a href="#home" class="font-semibold tracking-tight text-lg">Zainur <span
+            class="text-primary-600 dark:text-primary-400">Roziqin</span></a>
+        <nav class="hidden md:flex gap-6 text-sm">
+          <a href="#about" class="hover:text-primary-600">About</a>
+          <a href="#experience" class="hover:text-primary-600">Experience</a>
+          <a href="#projects" class="hover:text-primary-600">Projects</a>
+          <a href="#skills" class="hover:text-primary-600">Skills</a>
+          <a href="#education" class="hover:text-primary-600">Education</a>
+          <a href="#contact" class="hover:text-primary-600">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle"
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-300 dark:border-slate-700 px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
+            aria-label="Toggle theme">
+            <span id="themeIcon">🌙</span>
+            <span class="hidden sm:inline" id="themeLabel">Dark</span>
+          </button>
+          <a href="#contact"
+            class="ml-1 hidden sm:inline-flex items-center rounded-xl bg-primary-600 px-3 py-1.5 text-white text-sm hover:bg-primary-700">Let’s
+            Talk</a>
+          <button class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" id="menuBtn"
+            aria-label="Open menu">☰</button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-2 text-sm">
+        <a href="#about" class="py-1">About</a>
+        <a href="#experience" class="py-1">Experience</a>
+        <a href="#projects" class="py-1">Projects</a>
+        <a href="#skills" class="py-1">Skills</a>
+        <a href="#education" class="py-1">Education</a>
+        <a href="#contact" class="py-1">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="home" class="relative overflow-hidden">
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-to-b from-primary-50 via-white to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900">
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-sm tracking-widest uppercase text-primary-700/80 dark:text-primary-400">Software Engineer</p>
+          <h1 class="mt-2 text-4xl sm:text-5xl font-extrabold leading-tight">Hey! I’m <span
+              class="text-primary-600 dark:text-primary-400">Zainur</span><br /> I build mobile & web apps.</h1>
+          <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-xl">Experienced in Flutter, Kotlin, PHP, and Laravel.
+            Passionate about crafting dependable, user-friendly applications.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#projects" class="rounded-xl bg-primary-600 px-4 py-2 text-white hover:bg-primary-700">See
+              Projects</a>
+            <a href="#contact"
+              class="rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+          </div>
+        </div>
+        <div class="flex md:justify-end">
+          <!-- Avatar placeholder -->
+          <div class="relative">
+            <div
+              class="w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-gradient-to-br from-primary-300 to-primary-600/70 dark:from-primary-700 dark:to-primary-500 p-[6px] shadow-2xl">
+              <div
+                class="w-full h-full rounded-full bg-white dark:bg-slate-900 grid place-items-center text-6xl font-bold text-primary-600 dark:text-primary-400">
+                ZR</div>
+            </div>
+            <div class="absolute -inset-4 -z-10 blur-3xl opacity-20 bg-primary-400 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="transition-theme border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <div class="grid md:grid-cols-3 gap-10 items-start">
+        <div class="md:col-span-1">
+          <h2 class="text-2xl font-bold">About</h2>
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Situbondo, East Java • English (Intermediate) •
+            Bahasa Indonesia (Native)</p>
+        </div>
+        <div class="md:col-span-2 prose-custom">
+          <p>Motivated Software Engineer with ~3 years of experience building Android & iOS apps using Flutter and
+            Kotlin, integrating RESTful APIs, and improving app performance. I care deeply about clean UX and robust
+            engineering.</p>
+          <div class="mt-6 flex flex-wrap gap-2 text-sm">
+            <a class="inline-flex items-center gap-2 rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-800"
+              href="mailto:zainur7jan2002@gmail.com">📧 zainur7jan2002@gmail.com</a>
+            <a class="inline-flex items-center gap-2 rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-800"
+              href="tel:+6283891667303">📱 0838-9166-7303</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="transition-theme border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <h2 class="text-2xl font-bold mb-8">Experience</h2>
+      <div class="grid gap-6">
+        <!-- Lintasarta -->
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-semibold">Mobile Developer (Contract) — PT Aplikanusa Lintasarta</h3>
+            <span class="text-sm text-slate-500">07/2024 – 07/2025</span>
+          </div>
+          <ul class="mt-3 list-disc pl-5 space-y-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+            <li>Built responsive UIs from designs using Flutter & Kotlin.</li>
+            <li>Integrated RESTful APIs for seamless client–server functionality.</li>
+            <li>Implemented Google Maps features for location-based UX.</li>
+            <li>Created an AI-integrated chatbot supporting text & voice queries.</li>
+          </ul>
+        </article>
+        <!-- MDR -->
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-semibold">Software Engineer (Intern) — PT Mangli Djaya Raya</h3>
+            <span class="text-sm text-slate-500">08/2023 – 01/2024</span>
+          </div>
+          <ul class="mt-3 list-disc pl-5 space-y-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+            <li>Gathered requirements and delivered tailored features to improve UX & performance.</li>
+            <li>Built a supply chain system using VB.NET, Laravel & Flutter.</li>
+            <li>Developed a POS app with Bluetooth thermal printer for receipts.</li>
+          </ul>
+        </article>
+        <!-- Datanode -->
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-semibold">Mobile Developer (Contract) — PT Datanode Naralogi Siberkarya</h3>
+            <span class="text-sm text-slate-500">08/2023 – 03/2024</span>
+          </div>
+          <ul class="mt-3 list-disc pl-5 space-y-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+            <li>Delivered pixel-accurate UIs with Flutter & Kotlin.</li>
+            <li>Integrated RESTful APIs and Google Maps features.</li>
+          </ul>
+        </article>
+        <!-- Basic Teknologi -->
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-semibold">Mobile Developer (Freelance) — PT Basic Teknologi</h3>
+            <span class="text-sm text-slate-500">01/2023 – 03/2023</span>
+          </div>
+          <ul class="mt-3 list-disc pl-5 space-y-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+            <li>Implemented UI from design and integrated back-end via REST API.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="transition-theme border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-bold">Selected Projects</h2>
+        <span class="text-sm text-slate-500">More upon request</span>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Reusable card template -->
+        <!-- JamuPedia -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/yukbelajar.png" alt="YukBelajar" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">YukBelajar</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Traditional herbal marketplace connecting buyers
+              with local seller (Bondowoso).</p>
+          </div>
+        </article>
+        <!-- AquaDigi -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/tryout.id.png" alt="Tryout.id" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">Tryout.id</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Tracks water usage and bills for an enterprise in
+              Malang.</p>
+          </div>
+        </article>
+        <!-- BUSF -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/busf.png" alt="BUSF" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">Barokah Utama Smart Farm (BUSF)</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Poultry productivity calculator for Barokah Utama
+              Farm (Bondowoso).</p>
+          </div>
+        </article>
+        <!-- Dompet Makanan -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/dompetmakanan.png" alt="Dompet Makanan" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">Dompet Makanan</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Recommends places to eat in Jember using image
+              recognition from camera.</p>
+          </div>
+        </article>
+        <!-- E-Presensi -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/epresensi.png" alt="E-Presensi" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">E-Presensi</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Online attendance with face photo & geolocation;
+              includes meeting, overtime, reimbursement requests.</p>
+          </div>
+        </article>
+        <!-- Catat Meter -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/cater.png" alt="Aplikasi Catat Meter" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">Aplikasi Catat Meter</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Utility meter reading app for field officers
+              visiting customer homes.</p>
+          </div>
+        </article>
+        <!-- Skota Superapps -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/skota.png" alt="Skota Superapps" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">Skota Superapps</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Superapp with PPOB, event ticketing, and
+              marketplace features.</p>
+          </div>
+        </article>
+        <!-- LABahasa Chatbot -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/labahasa.png" alt="LABahasa Chatbot" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">LABahasa Chatbot</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">AI-powered bot that accepts text and voice
+              queries.</p>
+          </div>
+        </article>
+        <!-- BRC PoS -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/brc.png" alt="BRC PoS" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">BRC PoS</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Cigar retail PoS with Bluetooth thermal receipt
+              printing.</p>
+          </div>
+        </article>
+        <!-- AquaDigi -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/aquadigi.png" alt="AquaDigi" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">AquaDigi</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Water management app with real-time data
+              monitoring.</p>
+          </div>
+        </article>
+        <!-- FindHouse -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/findhouse.png" alt="FindHouse" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">FindHouse</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">House search app with real-time data
+              monitoring.</p>
+          </div>
+        </article>
+        <!-- PDAMGo -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/pdamgo.png" alt="PDAMGo" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">PDAMGo</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Water management app with real-time data
+              monitoring.</p>
+          </div>
+        </article>
+        <!-- sivali -->
+        <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div
+            class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 grid place-items-center text-slate-500">
+            <img src="img/sivali.png" alt="sivali" class="w-full h-62 object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">sivali</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Talent management for job seekers.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="transition-theme border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <h2 class="text-2xl font-bold">Skills</h2>
+      <p class="mt-3 text-sm text-slate-500">Primary stack & tools</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700">Flutter (Advanced)</span>
+        <span class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700">Dart (Advanced)</span>
+        <span class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700">Kotlin (Advanced)</span>
+        <span class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700">PHP (Intermediate)</span>
+        <span class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700">Laravel (Intermediate)</span>
+        <span class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700">UI/UX (Basic)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Education & Certificates ===== -->
+  <section id="education" class="transition-theme border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <h2 class="text-2xl font-bold mb-8">Education & Certificates</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Politeknik Negeri Jember — Informatics Engineering (Bachelor’s)</h3>
+          <p class="text-sm text-slate-500">08/2020 – 09/2024</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Certificates</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm space-y-1">
+            <li>Web Developer — BNSP</li>
+            <li>Bangkit Certificates — Bangkit Academy (Google, Tokopedia, Gojek, Traveloka)</li>
+            <li>Menjadi Android Developer Expert — Dicoding</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="transition-theme border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <div
+        class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 md:p-10 bg-slate-50 dark:bg-slate-900/40">
+        <h2 class="text-2xl font-bold">Let’s build something great</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Open to full-time roles and freelance projects.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="mailto:zainur7jan2002@gmail.com"
+            class="rounded-xl bg-primary-600 px-4 py-2 text-white hover:bg-primary-700">Email Me</a>
+          <a href="https://wa.me/6283891667303"
+            class="rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">Call/WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-sm text-slate-500">© <span id="year"></span> Zainur Roziqin — Built with
+    Tailwind CSS</footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Theme toggle with persist
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    const setThemeUI = () => {
+      const dark = document.documentElement.classList.contains('dark');
+      themeIcon.textContent = dark ? '☀️' : '🌙';
+      themeLabel.textContent = dark ? 'Light' : 'Dark';
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+    setThemeUI();
+
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const dark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      setThemeUI();
+    });
+  </script>
+</body>
+
+</html>
